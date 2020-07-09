@@ -1,6 +1,9 @@
 <?php 
 namespace app;
-use app\Server;
+
+// use app\customer\Server;
+use customer\Customer;
+use admin\Admin;
 /**
  * 
  */
@@ -17,24 +20,51 @@ class Login
 	{
 		if (count($dataLogin) > 0) 
 		{
-			print_r($dataLogin);
+			$checkLogin = array_filter($this->koneksi->get_data_users(), function($v) use($dataLogin) {return $dataLogin['username'] == $v->username and $dataLogin['password'] == $v->password; });
+
+			for ($i=0; $i < count($checkLogin) ; $i++) 
+			{ 
+				if (array_key_exists($i, $checkLogin)) 
+				{
+					if ($checkLogin[$i]->hak_akses == "admin") 
+					{
+						new Admin($checkLogin);
+					}
+					elseif ($checkLogin[$i]->hak_akses == "customer") 
+					{
+						new Customer($checkLogin);
+					}
+					
+
+				}
+				else
+				{
+					if ($checkLogin[$i+1]->hak_akses == "admin") 
+					{
+						new Admin($checkLogin);
+					}
+					elseif ($checkLogin[$i+1]->hak_akses == "customer") 
+					{
+						new Customer($checkLogin);
+					}
+				}
+			}
 		}
 	}
 
 	public function form_login()
 	{
-		$data_user = array();
+		$dataUser = array();
 		echo "\nSelamat Datang di Aplikasi Terserah lahhh";
 		echo "\n===========================================";
 		echo "\nUsername : ";
 		$username = trim(fgets(STDIN));
-		// array_push($data_user['username'], $username);
-		$data_user['username'] = $username;
+		$dataUser['username'] = $username;
 		echo "\nPassword : ";
 		$password = trim(fgets(STDIN));
-		$data_user['password'] = $password;
-		// array_push($data_user['password'], $password);
-		print_r($data_user);
+		$dataUser['password'] = $password;
+
+		$this->check_login($dataUser);
 	}
 }
 
