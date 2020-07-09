@@ -1,19 +1,29 @@
 <?php 
 namespace app;
+use app\Server;
 /**
  * 
  */
 class Login
 {
-	public $koneksi;
-	function __construct()
+	protected $koneksi;
+	function __construct(Server $server)
 	{
-		
+		$this->koneksi = $server;
+		$this->form_login();
 	}
 
 	public function check_login($dataLogin)
 	{
-		print_r($dataLogin);
+		if (count($dataLogin) > 0) 
+		{
+			print_r($dataLogin);
+		}
+	}
+
+	public function form_login()
+	{
+		$this->check_login('{"nama": "saya"}');
 	}
 }
 
