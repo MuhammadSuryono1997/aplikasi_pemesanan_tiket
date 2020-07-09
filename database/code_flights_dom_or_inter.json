@@ -2,27 +2,45 @@
     {
         "flight":"AirAsia",
         "flight_code":"QZ7682",
+<<<<<<< HEAD
         "flight_class": "Business",
         "flight_image":"https:\/\/da8hvrloj7e7d.cloudfront.net\/imageResource\/2015\/12\/17\/1450349174390-23151020ad74cd0811255b320fcea754.png",
         "flight_from":"CGK","flight_to":"DPS",
         "flight_route":"CGK-DPS",
         "flight_date":"2016-06-08",
+=======
+        "flight_class":"Executive",
+        "flight_image":"https:\/\/da8hvrloj7e7d.cloudfront.net\/imageResource\/2015\/12\/17\/1450349174390-23151020ad74cd0811255b320fcea754.png",
+        "flight_from":"CGK",
+        "flight_to":"DPS",
+        "flight_route":"CGK-DPS",
+        "flight_date":"11-07-2020",
+>>>>>>> 69c02c11d9ae26b5df4275261d43fe98815e529b
         "flight_transit":"Nonstop",
         "flight_infotransit":"CGK - DPS (08:45 -10:00)",
         "flight_datetime":"08:45 - 10:00",
         "flight_price":"350000",
-        "flight_publishfare":0,"flight_baggage":"15Kg",
+        "flight_publishfare":0,
+        "flight_baggage":"15Kg",
         "flight_facilities":"-"
     },
     {
         "flight":"Lion Air",
         "flight_code":"JT690",
+<<<<<<< HEAD
         "flight_class": "Executive",
+=======
+        "flight_class":"Business",
+>>>>>>> 69c02c11d9ae26b5df4275261d43fe98815e529b
         "flight_image":"https:\/\/da8hvrloj7e7d.cloudfront.net\/imageResource\/2015\/12\/17\/1450349861201-09ec8f298222a73d66e8e96aa3b918f0.png",
         "flight_from":"HLP",
         "flight_to":"SUB",
         "flight_route":"HLP-SUB",
+<<<<<<< HEAD
         "flight_date":"2016-06-08",
+=======
+        "flight_date":"12-07-2020",
+>>>>>>> 69c02c11d9ae26b5df4275261d43fe98815e529b
         "flight_transit":"Nonstop",
         "flight_infotransit":"HLP-SUB (05:00 -06:30) ",
         "flight_datetime":"05:00 -06:30",

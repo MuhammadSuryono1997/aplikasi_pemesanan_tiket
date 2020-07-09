@@ -1,0 +1,22 @@
+[
+    {
+        "flight_code": "9B",
+        "flight_name": "AccessRail"
+    },
+    {
+        "flight_code": "KI",
+        "flight_name": "Adam Sky Connection Air"
+    },
+    {
+        "flight_code": "JP",
+        "flight_name": "Adria Airways"
+    },
+    {
+        "flight_code": "A3",
+        "flight_name": "Aegean Airlines"
+    },
+    {
+        "flight_code": "24",
+        "flight_name": "TEST"
+    }
+]
