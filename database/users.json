@@ -1,0 +1,22 @@
+[
+	{
+		"id_user": "001",
+		"username": "root",
+		"password": "root",
+		"nama_lengkap": "Admin",
+		"email" : "example@example.com",
+		"telp": "021000",
+		"alamat": "Kantor Pemesanan Tiket Pesawat",
+		"hak_akses": "admin"
+	},
+	{
+		"id_user": "002",
+		"username": "customer1",
+		"password": "123",
+		"nama_lengkap": "Ahmad Abi Mulya",
+		"email" : "example@example.com",
+		"telp": "081257523828",
+		"alamat": "Jl. Celagi Basur No.5A Jimbaran Kuta Selatan Bali",
+		"hak_akses": "customer"
+	}
+]
