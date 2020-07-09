@@ -1,5 +1,33 @@
-[{"flight":"Batik Air","flight_code":"ID-6596","flight_route":"CGKSUB","flight_transit":"Nonstop","flight_datetime":"04:30 -
-06:00","flight_price":"650000"},{"flight":"Lion Air","flight_code":"JT690","flight_route":"CGKSUB","flight_transit":"Nonstop","flight_datetime":"05:00 -
-06:30","flight_price":"639000"},{"flight":"Lion Air","flight_code":"JT748","flight_route":"CGKSUB","flight_transit":"Nonstop","flight_datetime":"06:00 -
-07:30","flight_price":"639000"},{"flight":"Lion Air","flight_code":"JT692","flight_route":"CGKSUB","flight_transit":"Nonstop","flight_datetime":"09:10 -
-10:40","flight_price":"639000"}]
+[
+    {
+        "flight":"Batik Air",
+        "flight_code":"ID-6596",
+        "flight_route":"CGKSUB",
+        "flight_transit":"Nonstop",
+        "flight_datetime":"04:30 -06:00",
+        "flight_price":"650000"
+    },
+    {
+        "flight":"Lion Air",
+        "flight_code":"JT690",
+        "flight_route":"CGKSUB",
+        "flight_transit":"Nonstop",
+        "flight_datetime":"05:00 -06:30",
+        "flight_price":"639000"
+    },
+    {
+        "flight":"Lion Air",
+        "flight_code":"JT748",
+        "flight_route":"CGKSUB",
+        "flight_transit":"Nonstop",
+        "flight_datetime":"06:00 -07:30",
+        "flight_price":"639000"
+    },
+    {
+        "flight":"Lion Air",
+        "flight_code":"JT692",
+        "flight_route":"CGKSUB",
+        "flight_transit":"Nonstop",
+        "flight_datetime":"09:10 -10:40",
+        "flight_price":"639000"}
+    ]
