@@ -16,15 +16,7 @@
         "flight_name": "Aegean Airlines"
     },
     {
-        "flight_code": "25",
-        "flight_name": "test"
-    },
-    {
-        "flight_code": "26",
-        "flight_name": "test2"
-    },
-    {
-        "flight_code": "27",
-        "flight_name": "test3"
+        "flight_code": "24",
+        "flight_name": "TEST"
     }
 ]

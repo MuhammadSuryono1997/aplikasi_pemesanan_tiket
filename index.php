@@ -12,8 +12,9 @@ class first{
     {
         $this->flightJson = file_get_contents("database/code_flights_dom_or_inter.json");
         $this->flightSchedule = json_decode($this->flightJson, true);
-        // $this->main_menu();
-        // $this->flightSchedule();
+        $this->main_menu();
+        $this->schedule();
+        $this->bookingTicket();
     }
     function main_menu(){
         echo "\nPilih Menu dibawah ini";
@@ -23,7 +24,7 @@ class first{
         echo "\nMasukkan Nomor : ";
         $userInput1 = trim(fgets(STDIN));
         if($userInput1 == "1"){
-            $this->flightSchedule();
+            $this->schedule();
         }elseif($userInput1 == "2"){
             $this->bookingTicket();
         }else{
@@ -31,7 +32,7 @@ class first{
         }
     }
     
-    function flightSchedule(){
+    function schedule(){
         for ($i=0; $i<count($this->flightSchedule); $i++){
             echo "========================";
             echo "\nMaskapai : ".$this->flightSchedule[$i]['flight'];
@@ -46,12 +47,12 @@ class first{
     
         }
         echo "\n";
-        echo "Kembali ke menuu utama?(Y/n) : ";
+        echo "Kembali ke menu utama?(Y/n) : ";
         $userInput2 = trim(fgets(STDIN));
         if(strtolower($userInput2) == "y" ){
             $this->main_menu();
         }elseif(strtolower($userInput2) == "n"){
-            $this->flightSchedule();
+            $this->schedule();
         }else{
             echo "Masukkan huruf 'y' atau 'n' saja!";
         }
@@ -68,33 +69,36 @@ class first{
         }
         echo "\nKota Asal : ";
         $inputKotaAsal = trim(fgets(STDIN));
-        $transactionData['kota asal'] = $inputKotaAsal;
-        echo "========================";
+        $transactionData['kota_asal'] = $inputKotaAsal;
+        // for ($i=0; $i<count($this->flightSchedule); $i++){
+        //     $transactionData['kota_asal'] = $inputKotaAsal - $i;
+        // }
+        // echo "========================";
 
-        echo "\nPilih Kota Tujuan";
-        $count = 1;
-        for ($i=0; $i<count($this->flightSchedule); $i++){
-            echo "\n$count. ".$this->flightSchedule[$i]['flight_to'];
-            $count++;
-        }
-        echo "\nKota Tujuan : ";
-        $inputKotaTujuan = trim(fgets(STDIN));
-        $transactionData['kota tujuan'] = $inputKotaTujuan;
-        echo "========================";
+        // echo "\nPilih Kota Tujuan";
+        // $count = 1;
+        // for ($i=0; $i<count($this->flightSchedule); $i++){
+        //     echo "\n$count. ".$this->flightSchedule[$i]['flight_to'];
+        //     $count++;
+        // }
+        // echo "\nKota Tujuan : ";
+        // $inputKotaTujuan = trim(fgets(STDIN));
+        // $transactionData['kota tujuan'] = $count - $i;
+        // echo "========================";
 
-        echo "\nMasukkan Tanggal Pergi (Example : 11-07-2020) : ";
-        $inputTglPergi = trim(fgets(STDIN));
-        $transactionData['tanggal pergi'] = $inputTglPergi;
-        echo "========================";
+        // echo "\nMasukkan Tanggal Pergi (Example : 11-07-2020) : ";
+        // $inputTglPergi = trim(fgets(STDIN));
+        // $transactionData['tanggal pergi'] = $inputTglPergi;
+        // echo "========================";
 
-        $count = 1;
-        for ($i=0; $i<count($this->flightSchedule); $i++){
-            echo "\n$count. ".$this->flightSchedule[$i]['flight_class'];
-            $count++;
-        }
-        echo "\nKelas Penerbangan : ";
-        $inputKlsPenerbangan = trim(fgets(STDIN));
-        $transactionData['kelas penerbangan'] = $inputKlsPenerbangan;
+        // $count = 1;
+        // for ($i=0; $i<count($this->flightSchedule); $i++){
+        //     echo "\n$count. ".$this->flightSchedule[$i]['flight_class'];
+        //     $count++;
+        // }
+        // echo "\nKelas Penerbangan : ";
+        // $inputKlsPenerbangan = trim(fgets(STDIN));
+        // $transactionData['kelas penerbangan'] = $inputKlsPenerbangan;
 
         print_r($transactionData);
     }
