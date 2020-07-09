@@ -1,7 +1,6 @@
 <?php 
 namespace app;
 
-// use app\customer\Server;
 use customer\Customer;
 use admin\Admin;
 /**
@@ -20,34 +19,44 @@ class Login
 	{
 		if (count($dataLogin) > 0) 
 		{
-			$checkLogin = array_filter($this->koneksi->get_data_users(), function($v) use($dataLogin) {return $dataLogin['username'] == $v->username and $dataLogin['password'] == $v->password; });
+			$checkLogin = array_filter($this->koneksi->get_data_users(), function($v) use($dataLogin) {return $dataLogin['username'] == $v['username'] and $dataLogin['password'] == $v['password']; });
 
-			for ($i=0; $i < count($checkLogin) ; $i++) 
-			{ 
-				if (array_key_exists($i, $checkLogin)) 
-				{
-					if ($checkLogin[$i]->hak_akses == "admin") 
+			if (count($checkLogin) > 0) 
+			{
+				for ($i=0; $i < count($checkLogin) ; $i++) 
+				{ 
+					if (array_key_exists($i, $checkLogin)) 
 					{
-						new Admin($checkLogin);
-					}
-					elseif ($checkLogin[$i]->hak_akses == "customer") 
-					{
-						new Customer($checkLogin);
-					}
-					
+						if ($checkLogin[$i]['hak_akses'] == "admin") 
+						{
+							new Admin($checkLogin, $this->koneksi);
+						}
+						elseif ($checkLogin[$i]['hak_akses'] == "customer") 
+						{
+							new Customer($checkLogin, $this->koneksi);
+						}
+						
 
-				}
-				else
-				{
-					if ($checkLogin[$i+1]->hak_akses == "admin") 
-					{
-						new Admin($checkLogin);
 					}
-					elseif ($checkLogin[$i+1]->hak_akses == "customer") 
+					else
 					{
-						new Customer($checkLogin);
+						if ($checkLogin[$i+1]['hak_akses'] == "admin") 
+						{
+							new Admin($checkLogin, $this->koneksi);
+						}
+						elseif ($checkLogin[$i+1]['hak_akses'] == "customer") 
+						{
+							new Customer($checkLogin, $this->koneksi);
+						}
 					}
 				}
+			}
+			else
+			{
+				echo "Username atau password tidak ditemukan!\n";
+				echo "=========================================================";
+				echo "\n";
+				$this->form_login();
 			}
 		}
 	}
