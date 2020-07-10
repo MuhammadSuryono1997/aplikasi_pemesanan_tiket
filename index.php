@@ -64,7 +64,7 @@ class Main
     			if ($res->create_data_maskapai(new connection()) == true) 
     			{
     				echo "\n Penambahan data berhasil!";
-    				$this->result_login($res);
+    				$this->result_login_admin($res);
     			}
     			else
     			{
@@ -76,7 +76,7 @@ class Main
     			if ($res->update_data_maskapai(new connection()) == true) 
     			{
     				echo "\n Data berhasil di ubah!";
-    				$this->result_login($res);
+    				$this->result_login_admin($res);
     			}
     			else
     			{
@@ -88,7 +88,7 @@ class Main
     			if ($res->delete_data_maskapai(new connection()) == true) 
     			{
     				echo "\n Data berhasil di hapus!";
-    				$this->result_login($res);
+    				$this->result_login_admin($res);
     			}
     			else
     			{
@@ -104,12 +104,12 @@ class Main
             	switch ($res->create_data_airport(new connection())) {
             		case 'true':
             			echo "Data berhasil ditambahkan";
-    					$this->result_login($res);
+    					$this->result_login_admin($res);
             			break;
             		
             		default:
             			echo "Terjadi kesalahan ketika menambahkan!";
-            			$this->result_login($res);
+            			$this->result_login_admin($res);
             			break;
             	}
             }
@@ -118,11 +118,11 @@ class Main
             	switch ($res->update_data_airport(new connection())) {
             		case 'true':
             			echo "Data berhasil diubah";
-    					$this->result_login($res);
+    					$this->result_login_admin($res);
             			break;
             		
             		default:
-            			$this->result_login($res);
+            			$this->result_login_admin($res);
             			break;
             	}
             }
@@ -131,12 +131,12 @@ class Main
             	switch ($res->delete_data_airport(new connection())) {
             		case 'true':
             			echo "Data berhasil dihapus";
-    					$this->result_login($res);
+    					$this->result_login_admin($res);
             			break;
             		
             		default:
             			echo "Terjadi kesalahan ketika menghapus data!";
-            			$this->result_login($res);
+            			$this->result_login_admin($res);
             			break;
             	}
             }
