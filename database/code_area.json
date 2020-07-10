@@ -1,1 +1,9 @@
-null
+[
+    {
+        "code": "IGN",
+        "city": "Denpasar",
+        "airport": "Ngurah Rai International Airport",
+        "grup": "Lokal",
+        "status": "ON"
+    }
+]

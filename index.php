@@ -95,16 +95,54 @@ class Main
     				echo "\n Gagal dihapus!";
     			}
     		}
-    		else
-    		{
-    			$this->result_login($res);
-    		}
-        }elseif($res->menu_utama() == "2"){
-            // $this->menu_data_airport();
+        }
+        elseif($res->menu_utama() == "2")
+        {
+            $value = $res->menu_data_airport();
+            if ($value == "create") 
+            {
+            	switch ($res->create_data_airport(new connection())) {
+            		case 'true':
+            			echo "Data berhasil ditambahkan";
+    					$this->result_login($res);
+            			break;
+            		
+            		default:
+            			echo "Terjadi kesalahan ketika menambahkan!";
+            			$this->result_login($res);
+            			break;
+            	}
+            }
+            elseif ($value == "update") 
+            {
+            	switch ($res->update_data_airport(new connection())) {
+            		case 'true':
+            			echo "Data berhasil diubah";
+    					$this->result_login($res);
+            			break;
+            		
+            		default:
+            			$this->result_login($res);
+            			break;
+            	}
+            }
+            elseif ($value == "delete") 
+            {
+            	switch ($res->delete_data_airport(new connection())) {
+            		case 'true':
+            			echo "Data berhasil dihapus";
+    					$this->result_login($res);
+            			break;
+            		
+            		default:
+            			echo "Terjadi kesalahan ketika menghapus data!";
+            			$this->result_login($res);
+            			break;
+            	}
+            }
+
         }elseif($res->menu_utama() == "3"){
             // $this->menu_jadwal_penerbangan();
-        }else{
-            result_login($res);
         }
     }
 }
