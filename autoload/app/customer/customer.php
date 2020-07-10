@@ -33,7 +33,7 @@ class Customer
 	}
 
 	public function flight_schedule(){
-		$flightSchedule = $this->koneksi->get_data_penerbangan();
+		$flightSchedule = $this->koneksi->get_data("database/code_flights_dom_or_inter.json");
         for ($i=0; $i<count($flightSchedule); $i++){
             echo "========================";
             echo "\nMaskapai : ".$flightSchedule[$i]['flight'];
@@ -61,7 +61,7 @@ class Customer
 
     public function booking_ticket(){
         $transactionData = array();
-        $flightSchedule = $this->koneksi->get_data_penerbangan();
+        $flightSchedule = $this->koneksi->get_data("database/code_flights_dom_or_inter.json");
         echo "=====Menu Booking Ticket======";
 
         echo "\nPilih Kota Asal";
@@ -121,7 +121,7 @@ class Customer
 
     public function get_filter_jadwal($data)
     {
-    	$data = array_filter($this->koneksi->get_data_penerbangan(), function($value) use($data){return $value['flight_from'] == $data["kota_asal"] and $value['flight_to'] == $data["kota_tujuan"] and $value['flight_date'] == $data["tanggal_pergi"] and $value['flight_class'] == $data["kelas_penerbangan"];});
+    	$data = array_filter($this->koneksi->get_data("database/code_flights_dom_or_inter.json"), function($value) use($data){return $value['flight_from'] == $data["kota_asal"] and $value['flight_to'] == $data["kota_tujuan"] and $value['flight_date'] == $data["tanggal_pergi"] and $value['flight_class'] == $data["kelas_penerbangan"];});
 
     	$urutan = 1;
     	for ($i=0; $i<count($data); $i++){

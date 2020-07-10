@@ -1,1 +1,26 @@
-null
+[
+    {
+        "flight_code": "1AW",
+        "flight_name": "Sriwijaya"
+    },
+    {
+        "flight_code": "123",
+        "flight_name": "Air Lion Air Baru"
+    },
+    {
+        "flight_code": "123",
+        "flight_name": "ARUI"
+    },
+    {
+        "flight_code": "123",
+        "flight_name": "232"
+    },
+    {
+        "flight_code": "234",
+        "flight_name": "Air Asia"
+    },
+    {
+        "flight_code": "2323",
+        "flight_name": "Air Asia New"
+    }
+]

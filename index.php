@@ -56,7 +56,56 @@ class Main
 
     function result_login($res)
     {
-    	print_r($res);
+    	if($res->menu_utama() == "1"){
+    		
+    		$nilai = $res->menu_data_maskapai();
+    		if ($nilai == "1") 
+    		{
+    			if ($res->create_data_maskapai(new connection()) == true) 
+    			{
+    				echo "\n Penambahan data berhasil!";
+    				$this->result_login($res);
+    			}
+    			else
+    			{
+    				echo "\n Gagal ditambahkan!";
+    			}
+    		}
+    		elseif ($nilai == "2") 
+    		{
+    			if ($res->update_data_maskapai(new connection()) == true) 
+    			{
+    				echo "\n Data berhasil di ubah!";
+    				$this->result_login($res);
+    			}
+    			else
+    			{
+    				echo "\n Gagal diubah!";
+    			}
+    		}
+    		elseif ($nilai == "3")
+    		{
+    			if ($res->delete_data_maskapai(new connection()) == true) 
+    			{
+    				echo "\n Data berhasil di hapus!";
+    				$this->result_login($res);
+    			}
+    			else
+    			{
+    				echo "\n Gagal dihapus!";
+    			}
+    		}
+    		else
+    		{
+    			$this->result_login($res);
+    		}
+        }elseif($res->menu_utama() == "2"){
+            // $this->menu_data_airport();
+        }elseif($res->menu_utama() == "3"){
+            // $this->menu_jadwal_penerbangan();
+        }else{
+            result_login($res);
+        }
     }
 }
 

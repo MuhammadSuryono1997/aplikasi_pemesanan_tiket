@@ -16,7 +16,7 @@ class Login
 	{
 		if (count($dataLogin) > 0) 
 		{
-			$checkLogin = array_filter($this->koneksi->get_data_users(), function($v) use($dataLogin) {return $dataLogin['username'] == $v['username'] and $dataLogin['password'] == $v['password']; });
+			$checkLogin = array_filter($this->koneksi->get_data("database/users.json"), function($v) use($dataLogin) {return $dataLogin['username'] == $v['username'] and $dataLogin['password'] == $v['password']; });
 
 			if (count($checkLogin) > 0) 
 			{

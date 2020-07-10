@@ -9,7 +9,11 @@ class Admin extends Penerbangan
 	function __construct($user)
 	{
 		$this->users = $user;
-		$this->main_menu();
+	}
+
+	function menu_utama()
+	{
+		return $this->main_menu();
 	}
 
 	

@@ -1,0 +1,28 @@
+[
+    {
+        "flight": "AirAsia",
+        "flight_code": "QZ7682",
+        "flight_class": "Business",
+        "flight_image": "https:\/\/da8hvrloj7e7d.cloudfront.net\/imageResource\/2015\/12\/17\/1450349174390-23151020ad74cd0811255b320fcea754.png",
+        "flight_from": "CGK",
+        "flight_to": "DPS",
+        "flight_route": "CGK-DPS",
+        "flight_date": "2016-06-08",
+        "flight_transit": "Nonstop",
+        "flight_infotransit": "CGK - DPS (08:45 -10:00)",
+        "flight_datetime": "08:45 - 10:00",
+        "flight_price": "350000",
+        "flight_publishfare": 0,
+        "flight_baggage": "15Kg",
+        "flight_facilities": "-",
+        "kode_booking": "HA-1594362941",
+        "id_user": "002",
+        "username": "customer1",
+        "password": "123",
+        "nama_lengkap": "Ahmad Abi Mulya",
+        "email": "example@example.com",
+        "telp": "081257523828",
+        "alamat": "Jl. Celagi Basur No.5A Jimbaran Kuta Selatan Bali",
+        "hak_akses": "customer"
+    }
+]
