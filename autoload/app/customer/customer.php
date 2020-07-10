@@ -161,7 +161,7 @@ class Customer
 	        echo "=============== DATA BOOKING ====================";
 	        $checkPilihan[0]['kode_booking'] = "HA-".time();
 	        $data = $checkPilihan;
-	        print_r($data);
+	        // print_r($data);
 	        // for ($i=0; $i<count($data); $i++){
 	            echo "========================";
 	            echo "\n |  |Kode Booking 		: ".$data[0]['kode_booking'];

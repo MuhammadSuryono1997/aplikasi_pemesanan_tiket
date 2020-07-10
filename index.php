@@ -30,7 +30,7 @@ class Main
                             {
                                 if ($checkLogin[$i]['hak_akses'] == "admin") 
                                 {
-                                    new Admin($checkLogin, new connection());
+                                    $this->result_login(new Admin($checkLogin, new connection()));
                                 }
                                 elseif ($checkLogin[$i]['hak_akses'] == "customer") 
                                 {
@@ -42,7 +42,7 @@ class Main
                             {
                                 if ($checkLogin[$i+1]['hak_akses'] == "admin") 
                                 {
-                                    new Admin($checkLogin, new connection());
+                                    $this->result_login(new Admin($checkLogin, new connection()));
                                 }
                                 elseif ($checkLogin[$i+1]['hak_akses'] == "customer") 
                                 {
@@ -52,6 +52,11 @@ class Main
                         }
             }
         }
+    }
+
+    function result_login($res)
+    {
+    	print_r($res);
     }
 }
 
