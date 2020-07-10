@@ -3,14 +3,16 @@ namespace admin;
 /**
  * 
  */
-class Admin
+class Admin extends Penerbangan
 {
 	protected $users;
 	function __construct($user)
 	{
 		$this->users = $user;
-		print_r($this->users);
+		$this->main_menu();
 	}
+
+	
 }
 
  ?>

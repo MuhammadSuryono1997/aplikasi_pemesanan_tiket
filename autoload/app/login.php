@@ -1,8 +1,5 @@
 <?php 
 namespace app;
-
-use customer\Customer;
-use admin\Admin;
 /**
  * 
  */
@@ -12,7 +9,7 @@ class Login
 	function __construct(Server $server)
 	{
 		$this->koneksi = $server;
-		$this->form_login();
+		// $this->form_login();
 	}
 
 	public function check_login($dataLogin)
@@ -23,33 +20,7 @@ class Login
 
 			if (count($checkLogin) > 0) 
 			{
-				for ($i=0; $i < count($checkLogin) ; $i++) 
-				{ 
-					if (array_key_exists($i, $checkLogin)) 
-					{
-						if ($checkLogin[$i]['hak_akses'] == "admin") 
-						{
-							new Admin($checkLogin, $this->koneksi);
-						}
-						elseif ($checkLogin[$i]['hak_akses'] == "customer") 
-						{
-							new Customer($checkLogin, $this->koneksi);
-						}
-						
-
-					}
-					else
-					{
-						if ($checkLogin[$i+1]['hak_akses'] == "admin") 
-						{
-							new Admin($checkLogin, $this->koneksi);
-						}
-						elseif ($checkLogin[$i+1]['hak_akses'] == "customer") 
-						{
-							new Customer($checkLogin, $this->koneksi);
-						}
-					}
-				}
+				return $checkLogin;
 			}
 			else
 			{
@@ -73,7 +44,8 @@ class Login
 		$password = trim(fgets(STDIN));
 		$dataUser['password'] = $password;
 
-		$this->check_login($dataUser);
+		return $dataUser;
+
 	}
 }
 

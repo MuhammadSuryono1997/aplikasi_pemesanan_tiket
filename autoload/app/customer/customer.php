@@ -161,20 +161,21 @@ class Customer
 	        echo "=============== DATA BOOKING ====================";
 	        $checkPilihan[0]['kode_booking'] = "HA-".time();
 	        $data = $checkPilihan;
-	        for ($i=0; $i<count($data); $i++){
+	        print_r($data);
+	        // for ($i=0; $i<count($data); $i++){
 	            echo "========================";
-	            echo "\n |  |Kode Booking 		: ".$data['kode_booking'];
-	            echo "\n |  |Maskapai 			: ".$data[$i]['flight'];
-	            echo "\n |  |Kode Penerbangan 		: ".$data[$i]['flight_code'];
-	            echo "\n |  |Kelas Penerbangan 		: ".$data[$i]['flight_class'];
-	            echo "\n |  |Rute Penerbangan 		: ".$data[$i]['flight_route'];
-	            echo "\n |  |Tanggal Penerbangan 	: ".$data[$i]['flight_date']. "||".$data[$i]['flight_datetime'];
-	            echo "\n |  |Transit  				: ".$data[$i]['flight_transit'];
-	            echo "\n |  |Jadwal Transit 	: ".$data[$i]['flight_infotransit'];
-	            echo "\n |  |Harga 			: Rp.".$data[$i]['flight_price'];
+	            echo "\n |  |Kode Booking 		: ".$data[0]['kode_booking'];
+	            echo "\n |  |Maskapai 			: ".$data[0]['flight'];
+	            echo "\n |  |Kode Penerbangan 		: ".$data[0]['flight_code'];
+	            echo "\n |  |Kelas Penerbangan 		: ".$data[0]['flight_class'];
+	            echo "\n |  |Rute Penerbangan 		: ".$data[0]['flight_route'];
+	            echo "\n |  |Tanggal Penerbangan 	: ".$data[0]['flight_date']. "||".$data[0]['flight_datetime'];
+	            echo "\n |  |Transit  				: ".$data[0]['flight_transit'];
+	            echo "\n |  |Jadwal Transit 	: ".$data[0]['flight_infotransit'];
+	            echo "\n |  |Harga 			: Rp.".$data[0]['flight_price'];
 	            echo "\n========================";
-	        }
-	        $merge = array_merge($checkPilihan[0],$this->users[0]);
+	        // }
+	        $merge = [array_merge($checkPilihan[0],$this->users[0])];
 	        $merge = json_encode($merge,JSON_PRETTY_PRINT);
 	        if(file_put_contents("Data Pemesanan.json", $merge))
 	        {
