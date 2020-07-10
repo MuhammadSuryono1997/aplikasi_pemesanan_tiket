@@ -30,11 +30,11 @@ class Main
                             {
                                 if ($checkLogin[$i]['hak_akses'] == "admin") 
                                 {
-                                    $this->result_login(new Admin($checkLogin, new connection()));
+                                    $this->result_login_admin(new Admin($checkLogin, new connection()));
                                 }
                                 elseif ($checkLogin[$i]['hak_akses'] == "customer") 
                                 {
-                                    new Customer($checkLogin, new connection());
+                                    $this->result_login_customer(new Customer($checkLogin, new connection()));
                                 }
                                 
                             }
@@ -42,11 +42,11 @@ class Main
                             {
                                 if ($checkLogin[$i+1]['hak_akses'] == "admin") 
                                 {
-                                    $this->result_login(new Admin($checkLogin, new connection()));
+                                    $this->result_login_admin(new Admin($checkLogin, new connection()));
                                 }
                                 elseif ($checkLogin[$i+1]['hak_akses'] == "customer") 
                                 {
-                                    new Customer($checkLogin, new connection());
+                                    $this->result_login_customer(new Customer($checkLogin, new connection()));
                                 }
                             }
                         }
@@ -54,7 +54,7 @@ class Main
         }
     }
 
-    function result_login($res)
+    function result_login_admin($res)
     {
     	if($res->menu_utama() == "1"){
     		
@@ -144,6 +144,32 @@ class Main
         }elseif($res->menu_utama() == "3"){
             // $this->menu_jadwal_penerbangan();
         }
+    }
+
+    function result_login_customer($res)
+    {
+    	if ($res->form_menu_utama() == "jadwal") 
+    	{
+    		if($res->flight_schedule() == "Ya")
+    		{
+    			$this->result_login_customer($res);
+    		}
+    		else
+    		{
+    			$res->form_menu_utama();
+    		}
+    	}
+    	elseif ($res->form_menu_utama() == "booking") 
+    	{
+    		if($res->booking_ticket() == "Ya")
+    		{
+    			$this->result_login_customer($res);
+    		}
+    		else
+    		{
+    			$res->form_menu_utama();
+    		}
+    	}
     }
 }
 
