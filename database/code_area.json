@@ -1,1 +1,23 @@
-null
+[
+    {
+        "code": "CGK",
+        "city": "Jakarta",
+        "airport": "Soekarno Hatta Intl Airport",
+        "grup": "lokal",
+        "status": "ON"
+    },
+    {
+        "code": "SUB",
+        "city": "Surabaya",
+        "airport": "Juanda",
+        "grup": "lokal",
+        "status": "ON"
+    },
+    {
+        "code": "DPS",
+        "city": "Denpasar",
+        "airport": "Ngurah Rai",
+        "grup": "lokal",
+        "status": "ON"
+    }
+]
